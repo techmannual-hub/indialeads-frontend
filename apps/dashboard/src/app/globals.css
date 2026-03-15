@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 95%;
+    --card: 222 40% 7%;
+    --card-foreground: 210 40% 95%;
+    --popover: 222 40% 7%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 210 40% 80%;
+    --muted: 222 35% 10%;
+    --muted-foreground: 215 20% 50%;
+    --accent: 222 35% 14%;
+    --accent-foreground: 152 100% 60%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 14%;
+    --input: 222 30% 12%;
+    --ring: 152 100% 50%;
+    --radius: 0.5rem;
+
+    /* Status colors */
+    --status-live: #00ff88;
+    --status-pending: #f59e0b;
+    --status-dead: #ef4444;
+    --status-cooling: #60a5fa;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-white/20; }
+}
+
+@layer components {
+  /* Sidebar nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm text-muted-foreground
+           hover:text-foreground hover:bg-accent transition-all duration-150 cursor-pointer;
+  }
+  .nav-item.active {
+    @apply text-foreground bg-accent border-l-2 border-primary;
+  }
+
+  /* Data table row */
+  .table-row-hover {
+    @apply hover:bg-white/[0.02] transition-colors cursor-pointer;
+  }
+
+  /* Status badge */
+  .status-live    { @apply bg-green-500/10 text-green-400 border border-green-500/20; }
+  .status-pending { @apply bg-amber-500/10 text-amber-400 border border-amber-500/20; }
+  .status-dead    { @apply bg-red-500/10 text-red-400 border border-red-500/20; }
+  .status-cooling { @apply bg-blue-500/10 text-blue-400 border border-blue-500/20; }
+
+  /* Glass card */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-lg;
+  }
+
+  /* Shimmer skeleton */
+  .skeleton {
+    @apply animate-shimmer bg-gradient-to-r from-white/5 via-white/10 to-white/5
+           bg-[length:200%_100%] rounded;
+  }
+
+  /* Demo mode banner */
+  .demo-banner {
+    @apply bg-amber-500/10 border-b border-amber-500/30 text-amber-300
+           text-xs text-center py-1.5 tracking-wide;
+  }
+}
