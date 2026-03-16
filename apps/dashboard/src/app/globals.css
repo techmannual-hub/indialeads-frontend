@@ -73,8 +73,8 @@
   }
 
   /* Shimmer skeleton */
-  .skeleton {
-    @apply animate-shimmer bg-gradient-to-r from-white/5 via-white/10 to-white/5
+   .skeleton {
+    @apply bg-gradient-to-r from-white/5 via-white/10 to-white/5
            bg-[length:200%_100%] rounded;
   }
 
