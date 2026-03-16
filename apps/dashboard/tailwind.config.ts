@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
-      },
+  sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+  mono: ["ui-monospace", "SFMono-Regular", "monospace"],
+},
       colors: {
         // Navy base
         navy: {
