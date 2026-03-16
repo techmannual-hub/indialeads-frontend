@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
+     fontFamily: {
   sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
   mono: ["ui-monospace", "SFMono-Regular", "monospace"],
 },
